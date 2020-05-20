@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="assets/js/products.js"></script>
+
+<title>e-commerce</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body ng-controller="productsCtrl">
+	<!-- Header -->
+	<header id="header">
+		<h1>
+			<strong><a href="index">u-commerce</a></strong> at your home
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="index">Home</a></li>
+				<li><a href="buy">Buy</a></li>
+				<li><a href="sell">Sell</a></li>
+
+			</ul>
+		</nav>
+	</header>
+	<!-- Title -->
+	<section id="main" class="wrapper style2 special">
+		<div class="container">
+			<header class="major">
+				<h2>Start your treasure hunt here</h2>
+				<p>Look through our inventory of thousands of items at
+					affordable prices</p>
+			</header>
+
+			<!-- Products -->
+			<div class="feature-grid">
+
+				<ul style="list-style-type: circle;">
+					<li ng-repeat="pr in myProducts">
+						<div class="feature">
+
+							<div class="image rounded">
+								<img src="{{pr.Image}}" alt="" />
+							</div>
+
+							<div class="content">
+								<header>
+									<h4>{{pr.Title}}</h4>
+									<p>
+										<b>Shipping:</b> {{pr.Shipping}}
+									</p>
+								</header>
+								<p>
+									<b>Shipping Cost:</b> {{pr.ShippingCost}}
+								</p>
+								<p>
+									<b>Price:</b> {{pr.Price}}
+								</p>
+								<p>
+									<b>Condition: </b>{{pr.Condition}}
+								</p>
+
+								<a href="#" class="button special small">Buy Now</a>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+<!-- Footer -->
+	<footer id="footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="https://www.facebook.com/"
+					class="icon fa-facebook"></a></li>
+				<li><a href="https://twitter.com/" class="icon fa-twitter"></a></li>
+				<li><a href="https://www.instagram.com/"
+					class="icon fa-instagram"></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; U-Commerce, LLC</li>
+				<li>Design: by Mehmet Gokcek</li>
+			</ul>
+		</div>
+	</footer>
+	
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>

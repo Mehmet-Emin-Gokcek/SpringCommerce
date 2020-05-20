@@ -1,0 +1,36 @@
+{
+	"productrecords": [
+		{
+			"Title": " Details about  200+ Marvel Avengers Minifigures Iron Man Mark Batman Hulk Super Heroes Toy",
+			"Shipping": "Worldwide",
+			"ShippingCost": "Free",
+			"Price": "US $1.89",
+			"Condition": "Brand New",
+			"Image": "images/productImages/marvel.jpg"
+		},
+		{
+			"Title": "Star Wars Vintage Collection Enfys Nest Action Figure",
+			"Shipping": "Worldwide",
+			"ShippingCost": "Free",
+			"Price": "US $1.28",
+			"Condition": "Like new",
+			"Image": "images/productImages/starwars.jpg"
+		},
+		{
+			"Title": "Turkey 1927 set of stamps",
+			"Shipping": "Worldwide",
+			"ShippingCost": "US $7.00",
+			"Price": "US $3.25",
+			"Condition": "Barely Used",
+			"Image": "images/productImages/stamps.jpg"
+		},
+		{
+			"Title": "Apple AirPods 2nd Generation with Wired Charging Case",
+			"Shipping": "Only USA",
+			"ShippingCost": "US $27.00",
+			"Price": "US $139.99",
+			"Condition": "Brand new",
+			"Image": "images/productImages/airpods.jpg"
+		}
+	]
+} 

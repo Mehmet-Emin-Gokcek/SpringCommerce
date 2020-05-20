@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+
+<title>e-commerce</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+<body>
+	<!-- Header -->
+	<header id="header">
+		<h1>
+			<strong><a href="index">u-commerce</a></strong> at your home
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="index">Home</a></li>
+				<li><a href="buy">Buy</a></li>
+				<li><a href="sell">Sell</a></li>
+
+
+			</ul>
+		</nav>
+	</header>
+	<!-- Title -->
+	<section id="main" class="wrapperstyle1">
+		<div th:switch="${#lists.size(customers)}" class="container">
+			<header class="major">
+				<h2>Customer Records</h2>
+				<p>Millions of sellers use U-Commerce everday</p>
+
+			</header>
+			<div th:case="'0'">
+				<h1>There is no customer record to show!</h1>
+
+				<form th:action="@{sell}">
+					<input type="submit" value="Click here to sign up!"
+						class="btn btn-primary" />
+				</form>
+
+			</div>
+			<div th:case="*">
+				<h4>List of Sellers Added</h4>
+
+				<table>
+					<thead>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>City</th>
+							<th>E-mail</th>
+
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="customer : ${customers}">
+							<td class="column1" th:text="${customer.fname}">First Name</td>
+							<td class="column2" th:text="${customer.lname}">Last Name</td>
+							<td class="column3" th:text="${customer.city}">City</td>
+							<td class="column3" th:text="${customer.email}">Email</td>
+
+							<td>
+								<form class="column1" th:action="@{/deleteCustomer}"
+									method="post">
+									<input type="hidden" name="id" th:value="${customer.id}" /> <input
+										type="submit" value="Delete" class="button special small" />
+								</form>
+							</td>
+
+							<td>
+								<form class="column1" th:action="@{/editCustomer}" method="get">
+									<input class="button special small" type="hidden" name="id"
+										th:value="${customer.id}" /> <input class="button small"
+										type="submit" value="Edit" />
+								</form>
+
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="https://www.facebook.com/"
+					class="icon fa-facebook"></a></li>
+				<li><a href="https://twitter.com/" class="icon fa-twitter"></a></li>
+				<li><a href="https://www.instagram.com/"
+					class="icon fa-instagram"></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; U-Commerce, LLC</li>
+				<li>Design: by Mehmet Gokcek</li>
+			</ul>
+		</div>
+	</footer>
+
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>

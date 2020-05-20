@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<title>e-commerce</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+
+</head>
+<body>
+	<!-- Header -->
+	<header id="header">
+		<h1>
+			<strong><a href="index">u-commerce</a></strong> at your home
+		</h1>
+		<nav id="nav">
+			<ul>
+				<li><a href="index">Home</a></li>
+				<li><a href="buy">Buy</a></li>
+				<li><a href="sell">Sell</a></li>
+
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Title -->
+	<section id="main" class="wrapperstyle1">
+		<div class="container">
+			<header class="major">
+				<h2>Start your online store front</h2>
+				<p>Your products reach to millions of customers worldwide at
+					U-Commerce</p>
+
+			</header>
+
+			<h4>Sign up below</h4>
+			<form action="#" th:action="@{/updateCustomer}"
+				th:object="${customer}" method="post">
+				<table class="alt">
+					<tr>
+						<td><input type="text" name="firstName" th:field="*{fname}"
+							size="10" placeholder="First Name" required></td>
+					</tr>
+
+					<tr>
+						<td><input type="text" name="lastName" th:field="*{lname}"
+							size="10" placeholder="Last Name" required></td>
+					</tr>
+
+					<tr>
+						<td><input type="text" name="city" th:field="*{city}"
+							size="10" placeholder="City" required></td>
+					</tr>
+					<tr>
+						<td><input type="text" name="email" th:field="*{email}"
+							size="10" placeholder="Email" required> <input
+							type="hidden" name="id" th:value="${customer.id}" /></td>
+					</tr>
+
+					<tr>
+						<td><input class="button small" type="submit" value="Update">
+
+
+						<input class="button special small" type="Reset"
+							value="Reset Form"></td>
+					</tr>
+
+				</table>
+			</form>
+		</div>
+
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="container">
+			<ul class="icons">
+				<li><a href="https://www.facebook.com/"
+					class="icon fa-facebook"></a></li>
+				<li><a href="https://twitter.com/" class="icon fa-twitter"></a></li>
+				<li><a href="https://www.instagram.com/"
+					class="icon fa-instagram"></a></li>
+			</ul>
+			<ul class="copyright">
+				<li>&copy; U-Commerce, LLC</li>
+				<li>Design: by Mehmet Gokcek</li>
+			</ul>
+		</div>
+	</footer>
+
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>
