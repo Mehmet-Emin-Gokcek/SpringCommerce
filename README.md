@@ -1,4 +1,8 @@
-Final Exam Assignment:
-Create CRUD operations using Spring MVC.
-- Database connectiong is optional
-- Include a video or picture of the test run of your project
+An e-commerce Spring web application that allows CRUD operations using Spring MVC.
+
+It employs mySQL database to store and view customer information. 
+
+View test run video here: https://youtu.be/DdswZOokrmQ
+
+View live demo on AWS here: 
+
